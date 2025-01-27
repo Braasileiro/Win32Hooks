@@ -514,3 +514,4 @@ FodyWeavers.xsd
 
 # Custom
 !**/hooks/win32
+!**/settings/win32
