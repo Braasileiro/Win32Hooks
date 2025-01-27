@@ -1,0 +1,25 @@
+## To remove a configuration, simply delete the entry or comment with "#".
+## The configuration format is "param=value".
+
+[GetDeviceCaps]
+## https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getdevicecaps#parameters
+EnableHook=false
+
+# Sets the refresh rate that is returned to the application.
+# VREFRESH=60
+
+[GetSystemMetrics]
+## https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getsystemmetrics#parameters
+EnableHook=false
+
+# Sets the desktop resolution of the main monitor that is returned to the application.
+# SM_CXSCREEN=1920
+# SM_CYSCREEN=1080
+
+[RegisterRawInputDevices]
+## https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerrawinputdevices
+EnableHook=false
+
+# Replaces the RIDEV_NOHOTKEYS flag on RawInput devices with RIDEV_NOLEGACY.
+# This unlocks the Windows key without the risk of double input.
+# UnlockWindowsKey=true

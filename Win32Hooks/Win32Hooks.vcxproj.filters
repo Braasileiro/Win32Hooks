@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Packages">
+      <UniqueIdentifier>{6b8b12e5-f167-47c7-8743-299b8fc2b0e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hooks">
+      <UniqueIdentifier>{ff2cb37b-0799-43a8-8a1d-f338daa68757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hooks\Win32">
+      <UniqueIdentifier>{49d74e8e-be36-4c8d-ac2e-1c85f1766e00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{7b169814-a0e6-42cd-9dbd-de87d076da24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Settings">
+      <UniqueIdentifier>{00e0da03-44eb-4af7-a600-76aca9a915c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Settings\Win32">
+      <UniqueIdentifier>{a52522ee-73e9-4ee4-b13f-8515db7b23c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hooks">
+      <UniqueIdentifier>{6aa2bab2-f138-41e6-bd72-c23756a70831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Settings">
+      <UniqueIdentifier>{13dbd7dc-e4c3-473d-858e-9be0f7fa0e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{9505d831-975d-409f-86ed-7d8d2cb89d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hooks\Win32">
+      <UniqueIdentifier>{e119334a-e4b5-4c14-9154-cb2b78aa0378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Settings\Win32">
+      <UniqueIdentifier>{5ada6d7a-59e5-4961-81a4-d68a1a7ced12}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hooks\win32\get_device_caps_hook.h">
+      <Filter>Header Files\Hooks\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hooks\win32\get_system_metrics_hook.h">
+      <Filter>Header Files\Hooks\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\win32\get_device_caps_settings.h">
+      <Filter>Header Files\Settings\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\win32\get_system_metrics_settings.h">
+      <Filter>Header Files\Settings\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hooks\hooks.h">
+      <Filter>Header Files\Hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utils\logger.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\settings.h">
+      <Filter>Header Files\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="include\hooks\win32\register_raw_input_devices_hook.h">
+      <Filter>Header Files\Hooks\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\settings\win32\register_raw_input_devices_settings.h">
+      <Filter>Header Files\Settings\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="include\version_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooks\win32\get_device_caps_hook.cpp">
+      <Filter>Source Files\Hooks\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooks\win32\get_system_metrics_hook.cpp">
+      <Filter>Source Files\Hooks\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooks\hooks.cpp">
+      <Filter>Source Files\Hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\win32\get_device_caps_settings.cpp">
+      <Filter>Source Files\Settings\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\win32\get_system_metrics_settings.cpp">
+      <Filter>Source Files\Settings\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\settings.cpp">
+      <Filter>Source Files\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\logger.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\settings\win32\register_raw_input_devices_settings.cpp">
+      <Filter>Source Files\Settings\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hooks\win32\register_raw_input_devices_hook.cpp">
+      <Filter>Source Files\Hooks\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json">
+      <Filter>Packages</Filter>
+    </None>
+    <None Include="vcpkg-configuration.json">
+      <Filter>Packages</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
