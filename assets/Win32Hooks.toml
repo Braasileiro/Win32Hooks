@@ -23,3 +23,10 @@ EnableHook=false
 # Replaces the RIDEV_NOHOTKEYS flag on RawInput devices with RIDEV_NOLEGACY.
 # This unlocks the Windows key without the risk of double input.
 # UnlockWindowsKey=true
+
+[SetWindowPos]
+## https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
+EnableHook=false
+
+# Prevents the window from always being above all the others.
+# DisableAlwaysOnTop=true

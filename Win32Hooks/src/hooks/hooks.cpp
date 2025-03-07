@@ -3,6 +3,7 @@
 #include "hooks/win32/get_device_caps_hook.h"
 #include "hooks/win32/get_system_metrics_hook.h"
 #include "hooks/win32/register_raw_input_devices_hook.h"
+#include "hooks/win32/set_window_pos_hook.h"
 
 void Hooks::Attach()
 {
@@ -14,6 +15,7 @@ void Hooks::Attach()
     GetDeviceCapsHook::Attach();
     GetSystemMetricsHook::Attach();
     RegisterRawInputDevicesHook::Attach();
+    SetWindowPosHook::Attach();
 
     Commit();
 }
@@ -28,6 +30,7 @@ void Hooks::Detach()
     GetDeviceCapsHook::Detach();
     GetSystemMetricsHook::Detach();
     RegisterRawInputDevicesHook::Detach();
+    SetWindowPosHook::Detach();
 
     Commit();
 }
