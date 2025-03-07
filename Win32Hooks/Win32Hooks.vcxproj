@@ -189,9 +189,9 @@
     <ClInclude Include="include\settings\get_device_caps_settings.h" />
     <ClInclude Include="include\version_info.h" />
     <ClInclude Include="res\resource.h" />
+    <ClInclude Include="set_window_pos_hook.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\hooks\set_window_pos_hook.h" />
     <ClCompile Include="src\hooks\hooks.cpp" />
     <ClCompile Include="src\hooks\get_device_caps_hook.cpp" />
     <ClCompile Include="src\hooks\get_system_metrics_hook.cpp" />

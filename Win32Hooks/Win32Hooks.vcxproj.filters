@@ -75,6 +75,9 @@
     <ClInclude Include="include\settings\set_window_pos_settings.h">
       <Filter>Header Files\Settings</Filter>
     </ClInclude>
+    <ClInclude Include="set_window_pos_hook.h">
+      <Filter>Header Files\Hooks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -91,9 +94,6 @@
     </ClCompile>
     <ClCompile Include="src\utils\logger.cpp">
       <Filter>Source Files\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="include\hooks\set_window_pos_hook.h">
-      <Filter>Header Files\Hooks</Filter>
     </ClCompile>
     <ClCompile Include="src\hooks\get_device_caps_hook.cpp">
       <Filter>Source Files\Hooks</Filter>
