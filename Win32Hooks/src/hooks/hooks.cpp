@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "hooks/hooks.h"
-#include "hooks/win32/get_device_caps_hook.h"
-#include "hooks/win32/get_system_metrics_hook.h"
-#include "hooks/win32/register_raw_input_devices_hook.h"
-#include "hooks/win32/set_window_pos_hook.h"
+#include "hooks/get_device_caps_hook.h"
+#include "hooks/get_system_metrics_hook.h"
+#include "hooks/register_raw_input_devices_hook.h"
+#include "hooks/set_window_pos_hook.h"
 
 void Hooks::Attach()
 {

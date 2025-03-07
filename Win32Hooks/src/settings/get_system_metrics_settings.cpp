@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "settings/win32/get_system_metrics_settings.h"
+#include "settings/get_system_metrics_settings.h"
 
 using namespace Settings;
 

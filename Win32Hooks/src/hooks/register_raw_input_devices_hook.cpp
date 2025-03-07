@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "hooks/win32/register_raw_input_devices_hook.h"
-#include "settings/win32/register_raw_input_devices_settings.h"
+#include "hooks/register_raw_input_devices_hook.h"
+#include "settings/register_raw_input_devices_settings.h"
 
 // States
 int kNotified = 0;

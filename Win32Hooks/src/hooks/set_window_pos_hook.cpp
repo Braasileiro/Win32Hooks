@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "hooks/win32/set_window_pos_hook.h"
-#include "settings/win32/set_window_pos_settings.h"
+#include "hooks/set_window_pos_hook.h"
+#include "settings/set_window_pos_settings.h"
 
 // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos
 static BOOL(WINAPI* _SetWindowPos)(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags) = SetWindowPos;

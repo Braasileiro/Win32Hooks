@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "settings/win32/set_window_pos_settings.h"
+#include "settings/set_window_pos_settings.h"
 
 using namespace Settings;
 

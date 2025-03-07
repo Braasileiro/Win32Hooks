@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "settings/win32/register_raw_input_devices_settings.h"
+#include "settings/register_raw_input_devices_settings.h"
 
 using namespace Settings;
 

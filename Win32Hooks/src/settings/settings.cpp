@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "settings/settings.h"
-#include "settings/win32/get_device_caps_settings.h"
-#include "settings/win32/get_system_metrics_settings.h"
-#include "settings/win32/register_raw_input_devices_settings.h"
+#include "settings/get_device_caps_settings.h"
+#include "settings/get_system_metrics_settings.h"
+#include "settings/register_raw_input_devices_settings.h"
 
 bool Settings::Load()
 {

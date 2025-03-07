@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "hooks/win32/get_system_metrics_hook.h"
-#include "settings/win32/get_system_metrics_settings.h"
+#include "hooks/get_system_metrics_hook.h"
+#include "settings/get_system_metrics_settings.h"
 
 // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getsystemmetrics
 static int(WINAPI* _GetSystemMetrics)(int nIndex) = GetSystemMetrics;

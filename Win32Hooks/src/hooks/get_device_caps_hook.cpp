@@ -1,6 +1,6 @@
 #include "pch.h"
-#include "hooks/win32/get_device_caps_hook.h"
-#include "settings/win32/get_device_caps_settings.h"
+#include "hooks/get_device_caps_hook.h"
+#include "settings/get_device_caps_settings.h"
 
 // https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getdevicecaps
 static int(WINAPI* _GetDeviceCaps)(HDC hdc, int index) = GetDeviceCaps;

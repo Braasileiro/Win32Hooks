@@ -176,26 +176,30 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\hooks\win32\get_device_caps_hook.h" />
+    <ClInclude Include="include\hooks\get_device_caps_hook.h" />
     <ClInclude Include="include\hooks\hooks.h" />
-    <ClInclude Include="include\hooks\win32\get_system_metrics_hook.h" />
-    <ClInclude Include="include\hooks\win32\register_raw_input_devices_hook.h" />
-    <ClInclude Include="include\settings\win32\get_system_metrics_settings.h" />
-    <ClInclude Include="include\settings\win32\register_raw_input_devices_settings.h" />
+    <ClInclude Include="include\hooks\get_system_metrics_hook.h" />
+    <ClInclude Include="include\hooks\register_raw_input_devices_hook.h" />
+    <ClInclude Include="include\settings\get_system_metrics_settings.h" />
+    <ClInclude Include="include\settings\register_raw_input_devices_settings.h" />
+    <ClInclude Include="include\settings\set_window_pos_settings.h" />
     <ClInclude Include="include\utils\logger.h" />
     <ClInclude Include="include\pch.h" />
     <ClInclude Include="include\settings\settings.h" />
-    <ClInclude Include="include\settings\win32\get_device_caps_settings.h" />
+    <ClInclude Include="include\settings\get_device_caps_settings.h" />
     <ClInclude Include="include\version_info.h" />
     <ClInclude Include="res\resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\hooks\set_window_pos_hook.h" />
     <ClCompile Include="src\hooks\hooks.cpp" />
-    <ClCompile Include="src\hooks\win32\get_device_caps_hook.cpp" />
-    <ClCompile Include="src\hooks\win32\get_system_metrics_hook.cpp" />
-    <ClCompile Include="src\hooks\win32\register_raw_input_devices_hook.cpp" />
-    <ClCompile Include="src\settings\win32\get_system_metrics_settings.cpp" />
-    <ClCompile Include="src\settings\win32\register_raw_input_devices_settings.cpp" />
+    <ClCompile Include="src\hooks\get_device_caps_hook.cpp" />
+    <ClCompile Include="src\hooks\get_system_metrics_hook.cpp" />
+    <ClCompile Include="src\hooks\register_raw_input_devices_hook.cpp" />
+    <ClCompile Include="src\hooks\set_window_pos_hook.cpp" />
+    <ClCompile Include="src\settings\get_system_metrics_settings.cpp" />
+    <ClCompile Include="src\settings\register_raw_input_devices_settings.cpp" />
+    <ClCompile Include="src\settings\set_window_pos_settings.cpp" />
     <ClCompile Include="src\utils\logger.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -205,7 +209,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\settings\settings.cpp" />
-    <ClCompile Include="src\settings\win32\get_device_caps_settings.cpp" />
+    <ClCompile Include="src\settings\get_device_caps_settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg-configuration.json" />

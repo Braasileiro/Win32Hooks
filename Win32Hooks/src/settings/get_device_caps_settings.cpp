@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "settings/win32/get_device_caps_settings.h"
+#include "settings/get_device_caps_settings.h"
 
 using namespace Settings;
 
