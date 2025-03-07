@@ -75,7 +75,7 @@
     <ClInclude Include="include\settings\set_window_pos_settings.h">
       <Filter>Header Files\Settings</Filter>
     </ClInclude>
-    <ClInclude Include="set_window_pos_hook.h">
+    <ClInclude Include="include\hooks\set_window_pos_hook.h">
       <Filter>Header Files\Hooks</Filter>
     </ClInclude>
   </ItemGroup>
