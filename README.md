@@ -27,7 +27,8 @@ Open the `Win32Hooks.toml` file and set any parameters you want on the supported
 # Supported Functions
 * [GetDeviceCaps](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getdevicecaps)
 * [GetSystemMetrics](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getsystemmetrics)
-* [RegisterRawInputDevices](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerrawinputdevices) (Unlock Windows key only)
+* [RegisterRawInputDevices](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerrawinputdevices) (Unlock Windows key)
+* [SetWindowPos](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos) (Disable always on top)
 
 # Notes
 This project is the merging of my current hooks into one place, development will take place only here from now on.
