@@ -9,10 +9,10 @@ BOOL WINAPI HK_SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int c
 {
     if (!Settings::SetWindowPos::DisableAlwaysOnTop)
     {
-        return _SetWindowPos(hWnd, HWND_NOTOPMOST, X, Y, cx, cy, uFlags);
+        return _SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
     }
 
-    return _SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
+    return _SetWindowPos(hWnd, HWND_NOTOPMOST, X, Y, cx, cy, uFlags);
 }
 
 void SetWindowPosHook::Attach()
