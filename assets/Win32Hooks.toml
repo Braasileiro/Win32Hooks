@@ -20,9 +20,9 @@ EnableHook=false
 ## https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerrawinputdevices
 EnableHook=false
 
-# Replaces the RIDEV_NOHOTKEYS flag on RawInput devices with RIDEV_NOLEGACY.
-# This unlocks the Windows key without the risk of double input.
-# UnlockWindowsKey=true
+# Removes the RIDEV_NOHOTKEYS flag on RawInput devices.
+# This reactivates the hotkeys defined by the application (system-wide), including the Windows key, without the risk of double input.
+# RemoveNoHotkeysFlag=true
 
 [SetWindowPos]
 ## https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowpos

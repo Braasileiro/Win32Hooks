@@ -16,7 +16,7 @@ BOOL WINAPI HK_RegisterRawInputDevices(PCRAWINPUTDEVICE pRawInputDevices, UINT u
 
         return _RegisterRawInputDevices(pRawInputDevices, uiNumDevices, cbSize);
     }
-    else if (!Settings::RegisterRawInputDevices::UnlockWindowsKey)
+    else if (!Settings::RegisterRawInputDevices::RemoveNoHotkeysFlag)
     {
         return _RegisterRawInputDevices(pRawInputDevices, uiNumDevices, cbSize);
     }
@@ -32,13 +32,12 @@ BOOL WINAPI HK_RegisterRawInputDevices(PCRAWINPUTDEVICE pRawInputDevices, UINT u
             if (current.dwFlags & RIDEV_NOHOTKEYS)
             {
                 /*
-                 * Override with RIDEV_NOLEGACY. Prevents RawInput from sending 'WM_' notifications.
-                 * This flag prevents double input in some applications that use RawInput and LegacyInput together.
-                 * ReShade is affected by this in games that use both APIs.
-                 */
-                current.dwFlags = RIDEV_NOLEGACY;
-
-                // TODO: External configuration for the user to be able to configure the flags they want?
+                * Removes the RIDEV_NOHOTKEYS flag.
+                * This reactivates the hotkeys defined by the application (system-wide), including the Windows key, without the risk of double input.
+                * The RIDEV_NOLEGACY approach was previously flawed in some games such as Doom (2016).
+                * This approach is more secure and stable, and does not alter the other flags that are set for the device.
+                */
+                current.dwFlags ^= RIDEV_NOHOTKEYS;
 
                 /*
                  * Maximum of 5 notifications.
@@ -46,7 +45,7 @@ BOOL WINAPI HK_RegisterRawInputDevices(PCRAWINPUTDEVICE pRawInputDevices, UINT u
                  */
                 if (kNotified < 5)
                 {
-                    spdlog::info("The device has RIDEV_NOHOTKEYS flag. Replacing with RIDEV_NOLEGACY...");
+                    spdlog::info("The device has RIDEV_NOHOTKEYS flag. The flag has been removed.");
 
                     kNotified += 1;
 

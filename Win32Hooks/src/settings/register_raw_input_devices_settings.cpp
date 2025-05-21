@@ -4,7 +4,7 @@
 using namespace Settings;
 
 bool RegisterRawInputDevices::EnableHook;
-bool RegisterRawInputDevices::UnlockWindowsKey;
+bool RegisterRawInputDevices::RemoveNoHotkeysFlag;
 
 void RegisterRawInputDevices::Load(toml::table& table)
 {
@@ -14,7 +14,7 @@ void RegisterRawInputDevices::Load(toml::table& table)
 
     if (EnableHook)
     {
-        UnlockWindowsKey = section["UnlockWindowsKey"].value_or(false);
+        RemoveNoHotkeysFlag = section["RemoveNoHotkeysFlag"].value_or(false);
 
         spdlog::info("Describing 'RegisterRawInputDevices' settings...");
         spdlog::info("------------------------------------------------");
@@ -25,5 +25,5 @@ void RegisterRawInputDevices::Load(toml::table& table)
 
 void RegisterRawInputDevices::Describe()
 {
-    spdlog::info("UnlockWindowsKey is '{}'.", UnlockWindowsKey);
+    spdlog::info("RemoveNoHotkeysFlag is '{}'.", RemoveNoHotkeysFlag);
 }

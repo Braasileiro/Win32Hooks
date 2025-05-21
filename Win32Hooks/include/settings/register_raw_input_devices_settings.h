@@ -6,7 +6,7 @@ namespace Settings
     {
     public:
         static bool EnableHook;
-        static bool UnlockWindowsKey;
+        static bool RemoveNoHotkeysFlag;
 
         static void Load(toml::table& table);
 
