@@ -39,13 +39,10 @@
     <ClInclude Include="include\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\hooks\hooks.h">
+    <ClInclude Include="include\loader.h">
       <Filter>Header Files\Hooks</Filter>
     </ClInclude>
-    <ClInclude Include="include\utils\logger.h">
-      <Filter>Header Files\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="include\settings\settings.h">
+    <ClInclude Include="include\configs.h">
       <Filter>Header Files\Settings</Filter>
     </ClInclude>
     <ClInclude Include="include\version_info.h">
@@ -78,6 +75,9 @@
     <ClInclude Include="include\hooks\set_window_pos_hook.h">
       <Filter>Header Files\Hooks</Filter>
     </ClInclude>
+    <ClInclude Include="include\utils\logger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -86,14 +86,11 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\hooks\hooks.cpp">
+    <ClCompile Include="src\loader.cpp">
       <Filter>Source Files\Hooks</Filter>
     </ClCompile>
-    <ClCompile Include="src\settings\settings.cpp">
+    <ClCompile Include="src\configs.cpp">
       <Filter>Source Files\Settings</Filter>
-    </ClCompile>
-    <ClCompile Include="src\utils\logger.cpp">
-      <Filter>Source Files\Utils</Filter>
     </ClCompile>
     <ClCompile Include="src\hooks\get_device_caps_hook.cpp">
       <Filter>Source Files\Hooks</Filter>
@@ -119,14 +116,6 @@
     <ClCompile Include="src\settings\set_window_pos_settings.cpp">
       <Filter>Source Files\Settings</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="vcpkg.json">
-      <Filter>Packages</Filter>
-    </None>
-    <None Include="vcpkg-configuration.json">
-      <Filter>Packages</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\resource.rc">

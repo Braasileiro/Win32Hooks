@@ -1,11 +1,11 @@
 #include "pch.h"
-#include "hooks/hooks.h"
+#include "loader.h"
 #include "hooks/get_device_caps_hook.h"
 #include "hooks/get_system_metrics_hook.h"
 #include "hooks/register_raw_input_devices_hook.h"
 #include "hooks/set_window_pos_hook.h"
 
-void Hooks::Attach()
+void Loader::Attach()
 {
     spdlog::info("Attaching hooks...");
 
@@ -20,7 +20,7 @@ void Hooks::Attach()
     Commit();
 }
 
-void Hooks::Detach()
+void Loader::Detach()
 {
     spdlog::info("Detaching hooks...");
 
@@ -35,7 +35,7 @@ void Hooks::Detach()
     Commit();
 }
 
-bool Hooks::Commit()
+bool Loader::Commit()
 {
     auto result = DetourTransactionCommit();
 

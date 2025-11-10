@@ -11,7 +11,7 @@ int WINAPI HK_GetDeviceCaps(HDC hdc, int index)
     auto result = GetDeviceCapsHook::GetValueByIndex(index);
 
     // Check if the value is undefined
-    if (Settings::GetDeviceCaps::IsUndefined(result))
+    if (SGetDeviceCaps::IsUndefined(result))
     {
         // Runs the original function
         return _GetDeviceCaps(hdc, index);
@@ -23,7 +23,7 @@ int WINAPI HK_GetDeviceCaps(HDC hdc, int index)
 
 void GetDeviceCapsHook::Attach()
 {
-    if (Settings::GetDeviceCaps::EnableHook)
+    if (SGetDeviceCaps::EnableHook)
     {
         DetourAttach(&(PVOID&)_GetDeviceCaps, HK_GetDeviceCaps);
 
@@ -33,7 +33,7 @@ void GetDeviceCapsHook::Attach()
 
 void GetDeviceCapsHook::Detach()
 {
-    if (Settings::GetDeviceCaps::EnableHook)
+    if (SGetDeviceCaps::EnableHook)
     {
         DetourDetach(&(PVOID&)_GetDeviceCaps, HK_GetDeviceCaps);
 
@@ -46,165 +46,165 @@ int GetDeviceCapsHook::GetValueByIndex(int& index)
     switch (index)
     {
     case DRIVERVERSION:
-        return Settings::GetDeviceCaps::driverversion;
+        return SGetDeviceCaps::driverversion;
         break;
 
     case TECHNOLOGY:
-        return Settings::GetDeviceCaps::technology;
+        return SGetDeviceCaps::technology;
         break;
 
     case HORZSIZE:
-        return Settings::GetDeviceCaps::horzsize;
+        return SGetDeviceCaps::horzsize;
         break;
 
     case VERTSIZE:
-        return Settings::GetDeviceCaps::vertsize;
+        return SGetDeviceCaps::vertsize;
         break;
 
     case HORZRES:
-        return Settings::GetDeviceCaps::horzres;
+        return SGetDeviceCaps::horzres;
         break;
 
     case VERTRES:
-        return Settings::GetDeviceCaps::vertres;
+        return SGetDeviceCaps::vertres;
         break;
 
     case BITSPIXEL:
-        return Settings::GetDeviceCaps::bitspixel;
+        return SGetDeviceCaps::bitspixel;
         break;
 
     case PLANES:
-        return Settings::GetDeviceCaps::planes;
+        return SGetDeviceCaps::planes;
         break;
 
     case NUMBRUSHES:
-        return Settings::GetDeviceCaps::numbrushes;
+        return SGetDeviceCaps::numbrushes;
         break;
 
     case NUMPENS:
-        return Settings::GetDeviceCaps::numpens;
+        return SGetDeviceCaps::numpens;
         break;
 
     case NUMMARKERS:
-        return Settings::GetDeviceCaps::nummarkers;
+        return SGetDeviceCaps::nummarkers;
         break;
 
     case NUMFONTS:
-        return Settings::GetDeviceCaps::numfonts;
+        return SGetDeviceCaps::numfonts;
         break;
 
     case NUMCOLORS:
-        return Settings::GetDeviceCaps::numcolors;
+        return SGetDeviceCaps::numcolors;
         break;
 
     case PDEVICESIZE:
-        return Settings::GetDeviceCaps::pdevicesize;
+        return SGetDeviceCaps::pdevicesize;
         break;
 
     case CURVECAPS:
-        return Settings::GetDeviceCaps::curvecaps;
+        return SGetDeviceCaps::curvecaps;
         break;
 
     case LINECAPS:
-        return Settings::GetDeviceCaps::linecaps;
+        return SGetDeviceCaps::linecaps;
         break;
 
     case POLYGONALCAPS:
-        return Settings::GetDeviceCaps::polygonalcaps;
+        return SGetDeviceCaps::polygonalcaps;
         break;
 
     case TEXTCAPS:
-        return Settings::GetDeviceCaps::textcaps;
+        return SGetDeviceCaps::textcaps;
         break;
 
     case CLIPCAPS:
-        return Settings::GetDeviceCaps::clipcaps;
+        return SGetDeviceCaps::clipcaps;
         break;
 
     case RASTERCAPS:
-        return Settings::GetDeviceCaps::rastercaps;
+        return SGetDeviceCaps::rastercaps;
         break;
 
     case ASPECTX:
-        return Settings::GetDeviceCaps::aspectx;
+        return SGetDeviceCaps::aspectx;
         break;
 
     case ASPECTY:
-        return Settings::GetDeviceCaps::aspecty;
+        return SGetDeviceCaps::aspecty;
         break;
 
     case ASPECTXY:
-        return Settings::GetDeviceCaps::aspectxy;
+        return SGetDeviceCaps::aspectxy;
         break;
 
     case LOGPIXELSX:
-        return Settings::GetDeviceCaps::logpixelsx;
+        return SGetDeviceCaps::logpixelsx;
         break;
 
     case LOGPIXELSY:
-        return Settings::GetDeviceCaps::logpixelsy;
+        return SGetDeviceCaps::logpixelsy;
         break;
 
     case SIZEPALETTE:
-        return Settings::GetDeviceCaps::sizepalette;
+        return SGetDeviceCaps::sizepalette;
         break;
 
     case NUMRESERVED:
-        return Settings::GetDeviceCaps::numreserved;
+        return SGetDeviceCaps::numreserved;
         break;
 
     case COLORRES:
-        return Settings::GetDeviceCaps::colorres;
+        return SGetDeviceCaps::colorres;
         break;
 
     case PHYSICALWIDTH:
-        return Settings::GetDeviceCaps::physicalwidth;
+        return SGetDeviceCaps::physicalwidth;
         break;
 
     case PHYSICALHEIGHT:
-        return Settings::GetDeviceCaps::physicalheight;
+        return SGetDeviceCaps::physicalheight;
         break;
 
     case PHYSICALOFFSETX:
-        return Settings::GetDeviceCaps::physicaloffsetx;
+        return SGetDeviceCaps::physicaloffsetx;
         break;
 
     case PHYSICALOFFSETY:
-        return Settings::GetDeviceCaps::physicaloffsety;
+        return SGetDeviceCaps::physicaloffsety;
         break;
 
     case SCALINGFACTORX:
-        return Settings::GetDeviceCaps::scalingfactorx;
+        return SGetDeviceCaps::scalingfactorx;
         break;
 
     case SCALINGFACTORY:
-        return Settings::GetDeviceCaps::scalingfactory;
+        return SGetDeviceCaps::scalingfactory;
         break;
 
     case VREFRESH:
-        return Settings::GetDeviceCaps::vrefresh;
+        return SGetDeviceCaps::vrefresh;
         break;
 
     case DESKTOPVERTRES:
-        return Settings::GetDeviceCaps::desktopvertres;
+        return SGetDeviceCaps::desktopvertres;
         break;
 
     case DESKTOPHORZRES:
-        return Settings::GetDeviceCaps::desktophorzres;
+        return SGetDeviceCaps::desktophorzres;
         break;
 
     case BLTALIGNMENT:
-        return Settings::GetDeviceCaps::bltalignment;
+        return SGetDeviceCaps::bltalignment;
         break;
 
     case SHADEBLENDCAPS:
-        return Settings::GetDeviceCaps::shadeblendcaps;
+        return SGetDeviceCaps::shadeblendcaps;
         break;
 
     case COLORMGMTCAPS:
-        return Settings::GetDeviceCaps::colormgmtcaps;
+        return SGetDeviceCaps::colormgmtcaps;
         break;
     }
 
-    return Settings::GetDeviceCaps::UNDEFINED;
+    return SGetDeviceCaps::UNDEFINED;
 }

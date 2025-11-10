@@ -16,7 +16,7 @@ BOOL WINAPI HK_RegisterRawInputDevices(PCRAWINPUTDEVICE pRawInputDevices, UINT u
 
         return _RegisterRawInputDevices(pRawInputDevices, uiNumDevices, cbSize);
     }
-    else if (!Settings::RegisterRawInputDevices::RemoveNoHotkeysFlag)
+    else if (!SRegisterRawInputDevices::RemoveNoHotkeysFlag)
     {
         return _RegisterRawInputDevices(pRawInputDevices, uiNumDevices, cbSize);
     }
@@ -69,7 +69,7 @@ BOOL WINAPI HK_RegisterRawInputDevices(PCRAWINPUTDEVICE pRawInputDevices, UINT u
 
 void RegisterRawInputDevicesHook::Attach()
 {
-    if (Settings::RegisterRawInputDevices::EnableHook)
+    if (SRegisterRawInputDevices::EnableHook)
     {
         DetourAttach(&(PVOID&)_RegisterRawInputDevices, HK_RegisterRawInputDevices);
 
@@ -79,7 +79,7 @@ void RegisterRawInputDevicesHook::Attach()
 
 void RegisterRawInputDevicesHook::Detach()
 {
-    if (Settings::RegisterRawInputDevices::EnableHook)
+    if (SRegisterRawInputDevices::EnableHook)
     {
         DetourDetach(&(PVOID&)_RegisterRawInputDevices, HK_RegisterRawInputDevices);
 

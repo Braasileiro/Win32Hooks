@@ -1,18 +1,18 @@
 #include "pch.h"
-#include "hooks/hooks.h"
-#include "utils/logger.h"
+#include "loader.h"
+#include "configs.h"
 #include "version_info.h"
-#include "settings/settings.h"
+#include "utils/logger.hpp"
 
 void Init()
 {
-    Logger::Init();
+    Logger::Init("Win32Hooks.log");
 
     spdlog::info("Win32Hooks {} initialized.", APP_PRODUCT_VERSION_A);
 
-    if (Settings::Load())
+    if (Configs::Load())
     {
-        Hooks::Attach();
+        Loader::Attach();
     }
 }
 
@@ -30,7 +30,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     case DLL_THREAD_DETACH:
         break;
     case DLL_PROCESS_DETACH:
-        Hooks::Detach();
+        Loader::Detach();
         break;
     }
 

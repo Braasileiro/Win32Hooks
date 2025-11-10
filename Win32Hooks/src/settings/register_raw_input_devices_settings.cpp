@@ -1,12 +1,10 @@
 #include "pch.h"
 #include "settings/register_raw_input_devices_settings.h"
 
-using namespace Settings;
+bool SRegisterRawInputDevices::EnableHook;
+bool SRegisterRawInputDevices::RemoveNoHotkeysFlag;
 
-bool RegisterRawInputDevices::EnableHook;
-bool RegisterRawInputDevices::RemoveNoHotkeysFlag;
-
-void RegisterRawInputDevices::Load(toml::table& table)
+void SRegisterRawInputDevices::Load(toml::table& table)
 {
     auto section = table["RegisterRawInputDevices"];
 
@@ -23,7 +21,7 @@ void RegisterRawInputDevices::Load(toml::table& table)
     }
 }
 
-void RegisterRawInputDevices::Describe()
+void SRegisterRawInputDevices::Describe()
 {
     spdlog::info("RemoveNoHotkeysFlag is '{}'.", RemoveNoHotkeysFlag);
 }

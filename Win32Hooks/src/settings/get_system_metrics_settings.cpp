@@ -1,106 +1,104 @@
 #include "pch.h"
 #include "settings/get_system_metrics_settings.h"
 
-using namespace Settings;
+bool SGetSystemMetrics::EnableHook;
+int SGetSystemMetrics::sm_arrange;
+int SGetSystemMetrics::sm_cleanboot;
+int SGetSystemMetrics::sm_cmonitors;
+int SGetSystemMetrics::sm_cmousebuttons;
+int SGetSystemMetrics::sm_convertibleslatemode;
+int SGetSystemMetrics::sm_cxborder;
+int SGetSystemMetrics::sm_cxcursor;
+int SGetSystemMetrics::sm_cxdlgframe;
+int SGetSystemMetrics::sm_cxdoubleclk;
+int SGetSystemMetrics::sm_cxdrag;
+int SGetSystemMetrics::sm_cxedge;
+int SGetSystemMetrics::sm_cxfixedframe;
+int SGetSystemMetrics::sm_cxfocusborder;
+int SGetSystemMetrics::sm_cxframe;
+int SGetSystemMetrics::sm_cxfullscreen;
+int SGetSystemMetrics::sm_cxhscroll;
+int SGetSystemMetrics::sm_cxhthumb;
+int SGetSystemMetrics::sm_cxicon;
+int SGetSystemMetrics::sm_cxiconspacing;
+int SGetSystemMetrics::sm_cxmaximized;
+int SGetSystemMetrics::sm_cxmaxtrack;
+int SGetSystemMetrics::sm_cxmenucheck;
+int SGetSystemMetrics::sm_cxmenusize;
+int SGetSystemMetrics::sm_cxmin;
+int SGetSystemMetrics::sm_cxminimized;
+int SGetSystemMetrics::sm_cxminspacing;
+int SGetSystemMetrics::sm_cxmintrack;
+int SGetSystemMetrics::sm_cxpaddedborder;
+int SGetSystemMetrics::sm_cxscreen;
+int SGetSystemMetrics::sm_cxsize;
+int SGetSystemMetrics::sm_cxsizeframe;
+int SGetSystemMetrics::sm_cxsmicon;
+int SGetSystemMetrics::sm_cxsmsize;
+int SGetSystemMetrics::sm_cxvirtualscreen;
+int SGetSystemMetrics::sm_cxvscroll;
+int SGetSystemMetrics::sm_cyborder;
+int SGetSystemMetrics::sm_cycaption;
+int SGetSystemMetrics::sm_cycursor;
+int SGetSystemMetrics::sm_cydlgframe;
+int SGetSystemMetrics::sm_cydoubleclk;
+int SGetSystemMetrics::sm_cydrag;
+int SGetSystemMetrics::sm_cyedge;
+int SGetSystemMetrics::sm_cyfixedframe;
+int SGetSystemMetrics::sm_cyfocusborder;
+int SGetSystemMetrics::sm_cyframe;
+int SGetSystemMetrics::sm_cyfullscreen;
+int SGetSystemMetrics::sm_cyhscroll;
+int SGetSystemMetrics::sm_cyicon;
+int SGetSystemMetrics::sm_cyiconspacing;
+int SGetSystemMetrics::sm_cykanjiwindow;
+int SGetSystemMetrics::sm_cymaximized;
+int SGetSystemMetrics::sm_cymaxtrack;
+int SGetSystemMetrics::sm_cymenu;
+int SGetSystemMetrics::sm_cymenucheck;
+int SGetSystemMetrics::sm_cymenusize;
+int SGetSystemMetrics::sm_cymin;
+int SGetSystemMetrics::sm_cyminimized;
+int SGetSystemMetrics::sm_cyminspacing;
+int SGetSystemMetrics::sm_cymintrack;
+int SGetSystemMetrics::sm_cyscreen;
+int SGetSystemMetrics::sm_cysize;
+int SGetSystemMetrics::sm_cysizeframe;
+int SGetSystemMetrics::sm_cysmcaption;
+int SGetSystemMetrics::sm_cysmicon;
+int SGetSystemMetrics::sm_cysmsize;
+int SGetSystemMetrics::sm_cyvirtualscreen;
+int SGetSystemMetrics::sm_cyvscroll;
+int SGetSystemMetrics::sm_cyvthumb;
+int SGetSystemMetrics::sm_dbcsenabled;
+int SGetSystemMetrics::sm_debug;
+int SGetSystemMetrics::sm_digitizer;
+int SGetSystemMetrics::sm_immenabled;
+int SGetSystemMetrics::sm_maximumtouches;
+int SGetSystemMetrics::sm_mediacenter;
+int SGetSystemMetrics::sm_menudropalignment;
+int SGetSystemMetrics::sm_mideastenabled;
+int SGetSystemMetrics::sm_mousepresent;
+int SGetSystemMetrics::sm_mousehorizontalwheelpresent;
+int SGetSystemMetrics::sm_mousewheelpresent;
+int SGetSystemMetrics::sm_network;
+int SGetSystemMetrics::sm_penwindows;
+int SGetSystemMetrics::sm_remotecontrol;
+int SGetSystemMetrics::sm_remotesession;
+int SGetSystemMetrics::sm_samedisplayformat;
+int SGetSystemMetrics::sm_secure;
+int SGetSystemMetrics::sm_serverr2;
+int SGetSystemMetrics::sm_showsounds;
+int SGetSystemMetrics::sm_shuttingdown;
+int SGetSystemMetrics::sm_slowmachine;
+int SGetSystemMetrics::sm_starter;
+int SGetSystemMetrics::sm_swapbutton;
+int SGetSystemMetrics::sm_systemdocked;
+int SGetSystemMetrics::sm_tabletpc;
+int SGetSystemMetrics::sm_xvirtualscreen;
+int SGetSystemMetrics::sm_yvirtualscreen;
 
-bool GetSystemMetrics::EnableHook;
-int GetSystemMetrics::sm_arrange;
-int GetSystemMetrics::sm_cleanboot;
-int GetSystemMetrics::sm_cmonitors;
-int GetSystemMetrics::sm_cmousebuttons;
-int GetSystemMetrics::sm_convertibleslatemode;
-int GetSystemMetrics::sm_cxborder;
-int GetSystemMetrics::sm_cxcursor;
-int GetSystemMetrics::sm_cxdlgframe;
-int GetSystemMetrics::sm_cxdoubleclk;
-int GetSystemMetrics::sm_cxdrag;
-int GetSystemMetrics::sm_cxedge;
-int GetSystemMetrics::sm_cxfixedframe;
-int GetSystemMetrics::sm_cxfocusborder;
-int GetSystemMetrics::sm_cxframe;
-int GetSystemMetrics::sm_cxfullscreen;
-int GetSystemMetrics::sm_cxhscroll;
-int GetSystemMetrics::sm_cxhthumb;
-int GetSystemMetrics::sm_cxicon;
-int GetSystemMetrics::sm_cxiconspacing;
-int GetSystemMetrics::sm_cxmaximized;
-int GetSystemMetrics::sm_cxmaxtrack;
-int GetSystemMetrics::sm_cxmenucheck;
-int GetSystemMetrics::sm_cxmenusize;
-int GetSystemMetrics::sm_cxmin;
-int GetSystemMetrics::sm_cxminimized;
-int GetSystemMetrics::sm_cxminspacing;
-int GetSystemMetrics::sm_cxmintrack;
-int GetSystemMetrics::sm_cxpaddedborder;
-int GetSystemMetrics::sm_cxscreen;
-int GetSystemMetrics::sm_cxsize;
-int GetSystemMetrics::sm_cxsizeframe;
-int GetSystemMetrics::sm_cxsmicon;
-int GetSystemMetrics::sm_cxsmsize;
-int GetSystemMetrics::sm_cxvirtualscreen;
-int GetSystemMetrics::sm_cxvscroll;
-int GetSystemMetrics::sm_cyborder;
-int GetSystemMetrics::sm_cycaption;
-int GetSystemMetrics::sm_cycursor;
-int GetSystemMetrics::sm_cydlgframe;
-int GetSystemMetrics::sm_cydoubleclk;
-int GetSystemMetrics::sm_cydrag;
-int GetSystemMetrics::sm_cyedge;
-int GetSystemMetrics::sm_cyfixedframe;
-int GetSystemMetrics::sm_cyfocusborder;
-int GetSystemMetrics::sm_cyframe;
-int GetSystemMetrics::sm_cyfullscreen;
-int GetSystemMetrics::sm_cyhscroll;
-int GetSystemMetrics::sm_cyicon;
-int GetSystemMetrics::sm_cyiconspacing;
-int GetSystemMetrics::sm_cykanjiwindow;
-int GetSystemMetrics::sm_cymaximized;
-int GetSystemMetrics::sm_cymaxtrack;
-int GetSystemMetrics::sm_cymenu;
-int GetSystemMetrics::sm_cymenucheck;
-int GetSystemMetrics::sm_cymenusize;
-int GetSystemMetrics::sm_cymin;
-int GetSystemMetrics::sm_cyminimized;
-int GetSystemMetrics::sm_cyminspacing;
-int GetSystemMetrics::sm_cymintrack;
-int GetSystemMetrics::sm_cyscreen;
-int GetSystemMetrics::sm_cysize;
-int GetSystemMetrics::sm_cysizeframe;
-int GetSystemMetrics::sm_cysmcaption;
-int GetSystemMetrics::sm_cysmicon;
-int GetSystemMetrics::sm_cysmsize;
-int GetSystemMetrics::sm_cyvirtualscreen;
-int GetSystemMetrics::sm_cyvscroll;
-int GetSystemMetrics::sm_cyvthumb;
-int GetSystemMetrics::sm_dbcsenabled;
-int GetSystemMetrics::sm_debug;
-int GetSystemMetrics::sm_digitizer;
-int GetSystemMetrics::sm_immenabled;
-int GetSystemMetrics::sm_maximumtouches;
-int GetSystemMetrics::sm_mediacenter;
-int GetSystemMetrics::sm_menudropalignment;
-int GetSystemMetrics::sm_mideastenabled;
-int GetSystemMetrics::sm_mousepresent;
-int GetSystemMetrics::sm_mousehorizontalwheelpresent;
-int GetSystemMetrics::sm_mousewheelpresent;
-int GetSystemMetrics::sm_network;
-int GetSystemMetrics::sm_penwindows;
-int GetSystemMetrics::sm_remotecontrol;
-int GetSystemMetrics::sm_remotesession;
-int GetSystemMetrics::sm_samedisplayformat;
-int GetSystemMetrics::sm_secure;
-int GetSystemMetrics::sm_serverr2;
-int GetSystemMetrics::sm_showsounds;
-int GetSystemMetrics::sm_shuttingdown;
-int GetSystemMetrics::sm_slowmachine;
-int GetSystemMetrics::sm_starter;
-int GetSystemMetrics::sm_swapbutton;
-int GetSystemMetrics::sm_systemdocked;
-int GetSystemMetrics::sm_tabletpc;
-int GetSystemMetrics::sm_xvirtualscreen;
-int GetSystemMetrics::sm_yvirtualscreen;
-
-void GetSystemMetrics::Load(toml::table& table)
+void SGetSystemMetrics::Load(toml::table& table)
 {
     auto section = table["GetSystemMetrics"];
 
@@ -211,12 +209,12 @@ void GetSystemMetrics::Load(toml::table& table)
     }
 }
 
-bool GetSystemMetrics::IsUndefined(int& value)
+bool SGetSystemMetrics::IsUndefined(int& value)
 {
     return value == UNDEFINED;
 }
 
-void GetSystemMetrics::Describe()
+void SGetSystemMetrics::Describe()
 {
     // YandereDev style
 

@@ -1,12 +1,10 @@
 #include "pch.h"
 #include "settings/set_window_pos_settings.h"
 
-using namespace Settings;
+bool SSetWindowPos::EnableHook;
+bool SSetWindowPos::DisableAlwaysOnTop;
 
-bool SetWindowPos::EnableHook;
-bool SetWindowPos::DisableAlwaysOnTop;
-
-void SetWindowPos::Load(toml::table& table)
+void SSetWindowPos::Load(toml::table& table)
 {
     auto section = table["SetWindowPos"];
 
@@ -23,7 +21,7 @@ void SetWindowPos::Load(toml::table& table)
     }
 }
 
-void SetWindowPos::Describe()
+void SSetWindowPos::Describe()
 {
     spdlog::info("DisableAlwaysOnTop is '{}'.", DisableAlwaysOnTop);
 }

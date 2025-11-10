@@ -1,16 +1,13 @@
 #pragma once
 
-namespace Settings
+class SSetWindowPos
 {
-    class SetWindowPos
-    {
-    public:
-        static bool EnableHook;
-        static bool DisableAlwaysOnTop;
+public:
+    static bool EnableHook;
+    static bool DisableAlwaysOnTop;
 
-        static void Load(toml::table& table);
+    static void Load(toml::table& table);
 
-    private:
-        static void Describe();
-    };
-}
+private:
+    static void Describe();
+};

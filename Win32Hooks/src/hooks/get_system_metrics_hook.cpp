@@ -11,7 +11,7 @@ int WINAPI HK_GetSystemMetrics(int nIndex)
     auto result = GetSystemMetricsHook::GetValueByIndex(nIndex);
 
     // Check if the value is undefined
-    if (Settings::GetSystemMetrics::IsUndefined(result))
+    if (SGetSystemMetrics::IsUndefined(result))
     {
         // Runs the original function
         return _GetSystemMetrics(nIndex);
@@ -23,7 +23,7 @@ int WINAPI HK_GetSystemMetrics(int nIndex)
 
 void GetSystemMetricsHook::Attach()
 {
-    if (Settings::GetSystemMetrics::EnableHook)
+    if (SGetSystemMetrics::EnableHook)
     {
         DetourAttach(&(PVOID&)_GetSystemMetrics, HK_GetSystemMetrics);
 
@@ -33,7 +33,7 @@ void GetSystemMetricsHook::Attach()
 
 void GetSystemMetricsHook::Detach()
 {
-    if (Settings::GetSystemMetrics::EnableHook)
+    if (SGetSystemMetrics::EnableHook)
     {
         DetourDetach(&(PVOID&)_GetSystemMetrics, HK_GetSystemMetrics);
 
@@ -46,282 +46,282 @@ int GetSystemMetricsHook::GetValueByIndex(int& nIndex)
     switch (nIndex)
     {
     case SM_ARRANGE:
-        return Settings::GetSystemMetrics::sm_arrange;
+        return SGetSystemMetrics::sm_arrange;
 
     case SM_CLEANBOOT:
-        return Settings::GetSystemMetrics::sm_cleanboot;
+        return SGetSystemMetrics::sm_cleanboot;
 
     case SM_CMONITORS:
-        return Settings::GetSystemMetrics::sm_cmonitors;
+        return SGetSystemMetrics::sm_cmonitors;
 
     case SM_CMOUSEBUTTONS:
-        return Settings::GetSystemMetrics::sm_cmousebuttons;
+        return SGetSystemMetrics::sm_cmousebuttons;
 
     case SM_CONVERTIBLESLATEMODE:
-        return Settings::GetSystemMetrics::sm_convertibleslatemode;
+        return SGetSystemMetrics::sm_convertibleslatemode;
 
     case SM_CXBORDER:
-        return Settings::GetSystemMetrics::sm_cxborder;
+        return SGetSystemMetrics::sm_cxborder;
 
     case SM_CXCURSOR:
-        return Settings::GetSystemMetrics::sm_cxcursor;
+        return SGetSystemMetrics::sm_cxcursor;
 
     case SM_CXDLGFRAME:
-        return !Settings::GetSystemMetrics::IsUndefined(Settings::GetSystemMetrics::sm_cxdlgframe)
-            ? Settings::GetSystemMetrics::sm_cxdlgframe : Settings::GetSystemMetrics::sm_cxfixedframe;
+        return !SGetSystemMetrics::IsUndefined(SGetSystemMetrics::sm_cxdlgframe)
+            ? SGetSystemMetrics::sm_cxdlgframe : SGetSystemMetrics::sm_cxfixedframe;
 
     case SM_CXDOUBLECLK:
-        return Settings::GetSystemMetrics::sm_cxdoubleclk;
+        return SGetSystemMetrics::sm_cxdoubleclk;
 
     case SM_CXDRAG:
-        return Settings::GetSystemMetrics::sm_cxdrag;
+        return SGetSystemMetrics::sm_cxdrag;
 
     case SM_CXEDGE:
-        return Settings::GetSystemMetrics::sm_cxedge;
+        return SGetSystemMetrics::sm_cxedge;
 
     case SM_CXFOCUSBORDER:
-        return Settings::GetSystemMetrics::sm_cxfocusborder;
+        return SGetSystemMetrics::sm_cxfocusborder;
 
     case SM_CXFRAME:
-        return !Settings::GetSystemMetrics::IsUndefined(Settings::GetSystemMetrics::sm_cxframe)
-            ? Settings::GetSystemMetrics::sm_cxframe : Settings::GetSystemMetrics::sm_cxsizeframe;
+        return !SGetSystemMetrics::IsUndefined(SGetSystemMetrics::sm_cxframe)
+            ? SGetSystemMetrics::sm_cxframe : SGetSystemMetrics::sm_cxsizeframe;
 
     case SM_CXFULLSCREEN:
-        return Settings::GetSystemMetrics::sm_cxfullscreen;
+        return SGetSystemMetrics::sm_cxfullscreen;
 
     case SM_CXHSCROLL:
-        return Settings::GetSystemMetrics::sm_cxhscroll;
+        return SGetSystemMetrics::sm_cxhscroll;
 
     case SM_CXHTHUMB:
-        return Settings::GetSystemMetrics::sm_cxhthumb;
+        return SGetSystemMetrics::sm_cxhthumb;
 
     case SM_CXICON:
-        return Settings::GetSystemMetrics::sm_cxicon;
+        return SGetSystemMetrics::sm_cxicon;
 
     case SM_CXICONSPACING:
-        return Settings::GetSystemMetrics::sm_cxiconspacing;
+        return SGetSystemMetrics::sm_cxiconspacing;
 
     case SM_CXMAXIMIZED:
-        return Settings::GetSystemMetrics::sm_cxmaximized;
+        return SGetSystemMetrics::sm_cxmaximized;
 
     case SM_CXMAXTRACK:
-        return Settings::GetSystemMetrics::sm_cxmaxtrack;
+        return SGetSystemMetrics::sm_cxmaxtrack;
 
     case SM_CXMENUCHECK:
-        return Settings::GetSystemMetrics::sm_cxmenucheck;
+        return SGetSystemMetrics::sm_cxmenucheck;
 
     case SM_CXMENUSIZE:
-        return Settings::GetSystemMetrics::sm_cxmenusize;
+        return SGetSystemMetrics::sm_cxmenusize;
 
     case SM_CXMIN:
-        return Settings::GetSystemMetrics::sm_cxmin;
+        return SGetSystemMetrics::sm_cxmin;
 
     case SM_CXMINIMIZED:
-        return Settings::GetSystemMetrics::sm_cxminimized;
+        return SGetSystemMetrics::sm_cxminimized;
 
     case SM_CXMINSPACING:
-        return Settings::GetSystemMetrics::sm_cxminspacing;
+        return SGetSystemMetrics::sm_cxminspacing;
 
     case SM_CXMINTRACK:
-        return Settings::GetSystemMetrics::sm_cxmintrack;
+        return SGetSystemMetrics::sm_cxmintrack;
 
     case SM_CXPADDEDBORDER:
-        return Settings::GetSystemMetrics::sm_cxpaddedborder;
+        return SGetSystemMetrics::sm_cxpaddedborder;
 
     case SM_CXSCREEN:
-        return Settings::GetSystemMetrics::sm_cxscreen;
+        return SGetSystemMetrics::sm_cxscreen;
 
     case SM_CXSIZE:
-        return Settings::GetSystemMetrics::sm_cxsize;
+        return SGetSystemMetrics::sm_cxsize;
 
     case SM_CXSMICON:
-        return Settings::GetSystemMetrics::sm_cxsmicon;
+        return SGetSystemMetrics::sm_cxsmicon;
 
     case SM_CXSMSIZE:
-        return Settings::GetSystemMetrics::sm_cxsmsize;
+        return SGetSystemMetrics::sm_cxsmsize;
 
     case SM_CXVIRTUALSCREEN:
-        return Settings::GetSystemMetrics::sm_cxvirtualscreen;
+        return SGetSystemMetrics::sm_cxvirtualscreen;
 
     case SM_CXVSCROLL:
-        return Settings::GetSystemMetrics::sm_cxvscroll;
+        return SGetSystemMetrics::sm_cxvscroll;
 
     case SM_CYBORDER:
-        return Settings::GetSystemMetrics::sm_cyborder;
+        return SGetSystemMetrics::sm_cyborder;
 
     case SM_CYCAPTION:
-        return Settings::GetSystemMetrics::sm_cycaption;
+        return SGetSystemMetrics::sm_cycaption;
 
     case SM_CYCURSOR:
-        return Settings::GetSystemMetrics::sm_cycursor;
+        return SGetSystemMetrics::sm_cycursor;
 
     case SM_CYDLGFRAME:
-        return !Settings::GetSystemMetrics::IsUndefined(Settings::GetSystemMetrics::sm_cydlgframe)
-             ? Settings::GetSystemMetrics::sm_cydlgframe : Settings::GetSystemMetrics::sm_cyfixedframe;
+        return !SGetSystemMetrics::IsUndefined(SGetSystemMetrics::sm_cydlgframe)
+            ? SGetSystemMetrics::sm_cydlgframe : SGetSystemMetrics::sm_cyfixedframe;
 
     case SM_CYDOUBLECLK:
-        return Settings::GetSystemMetrics::sm_cydoubleclk;
+        return SGetSystemMetrics::sm_cydoubleclk;
 
     case SM_CYDRAG:
-        return Settings::GetSystemMetrics::sm_cydrag;
+        return SGetSystemMetrics::sm_cydrag;
 
     case SM_CYEDGE:
-        return Settings::GetSystemMetrics::sm_cyedge;
+        return SGetSystemMetrics::sm_cyedge;
 
     case SM_CYFOCUSBORDER:
-        return Settings::GetSystemMetrics::sm_cyfocusborder;
+        return SGetSystemMetrics::sm_cyfocusborder;
 
     case SM_CYFRAME:
-        return !Settings::GetSystemMetrics::IsUndefined(Settings::GetSystemMetrics::sm_cyframe)
-            ? Settings::GetSystemMetrics::sm_cyframe : Settings::GetSystemMetrics::sm_cysizeframe;
+        return !SGetSystemMetrics::IsUndefined(SGetSystemMetrics::sm_cyframe)
+            ? SGetSystemMetrics::sm_cyframe : SGetSystemMetrics::sm_cysizeframe;
 
     case SM_CYFULLSCREEN:
-        return Settings::GetSystemMetrics::sm_cyfullscreen;
+        return SGetSystemMetrics::sm_cyfullscreen;
 
     case SM_CYHSCROLL:
-        return Settings::GetSystemMetrics::sm_cyhscroll;
+        return SGetSystemMetrics::sm_cyhscroll;
 
     case SM_CYICON:
-        return Settings::GetSystemMetrics::sm_cyicon;
+        return SGetSystemMetrics::sm_cyicon;
 
     case SM_CYICONSPACING:
-        return Settings::GetSystemMetrics::sm_cyiconspacing;
+        return SGetSystemMetrics::sm_cyiconspacing;
 
     case SM_CYKANJIWINDOW:
-        return Settings::GetSystemMetrics::sm_cykanjiwindow;
+        return SGetSystemMetrics::sm_cykanjiwindow;
 
     case SM_CYMAXIMIZED:
-        return Settings::GetSystemMetrics::sm_cymaximized;
+        return SGetSystemMetrics::sm_cymaximized;
 
     case SM_CYMAXTRACK:
-        return Settings::GetSystemMetrics::sm_cymaxtrack;
+        return SGetSystemMetrics::sm_cymaxtrack;
 
     case SM_CYMENU:
-        return Settings::GetSystemMetrics::sm_cymenu;
+        return SGetSystemMetrics::sm_cymenu;
 
     case SM_CYMENUCHECK:
-        return Settings::GetSystemMetrics::sm_cymenucheck;
+        return SGetSystemMetrics::sm_cymenucheck;
 
     case SM_CYMENUSIZE:
-        return Settings::GetSystemMetrics::sm_cymenusize;
+        return SGetSystemMetrics::sm_cymenusize;
 
     case SM_CYMIN:
-        return Settings::GetSystemMetrics::sm_cymin;
+        return SGetSystemMetrics::sm_cymin;
 
     case SM_CYMINIMIZED:
-        return Settings::GetSystemMetrics::sm_cyminimized;
+        return SGetSystemMetrics::sm_cyminimized;
 
     case SM_CYMINSPACING:
-        return Settings::GetSystemMetrics::sm_cyminspacing;
+        return SGetSystemMetrics::sm_cyminspacing;
 
     case SM_CYMINTRACK:
-        return Settings::GetSystemMetrics::sm_cymintrack;
+        return SGetSystemMetrics::sm_cymintrack;
 
     case SM_CYSCREEN:
-        return Settings::GetSystemMetrics::sm_cyscreen;
+        return SGetSystemMetrics::sm_cyscreen;
 
     case SM_CYSIZE:
-        return Settings::GetSystemMetrics::sm_cysize;
+        return SGetSystemMetrics::sm_cysize;
 
     case SM_CYSMCAPTION:
-        return Settings::GetSystemMetrics::sm_cysmcaption;
+        return SGetSystemMetrics::sm_cysmcaption;
 
     case SM_CYSMICON:
-        return Settings::GetSystemMetrics::sm_cysmicon;
+        return SGetSystemMetrics::sm_cysmicon;
 
     case SM_CYSMSIZE:
-        return Settings::GetSystemMetrics::sm_cysmsize;
+        return SGetSystemMetrics::sm_cysmsize;
 
     case SM_CYVIRTUALSCREEN:
-        return Settings::GetSystemMetrics::sm_cyvirtualscreen;
+        return SGetSystemMetrics::sm_cyvirtualscreen;
 
     case SM_CYVSCROLL:
-        return Settings::GetSystemMetrics::sm_cyvscroll;
+        return SGetSystemMetrics::sm_cyvscroll;
 
     case SM_CYVTHUMB:
-        return Settings::GetSystemMetrics::sm_cyvthumb;
+        return SGetSystemMetrics::sm_cyvthumb;
 
     case SM_DBCSENABLED:
-        return Settings::GetSystemMetrics::sm_dbcsenabled;
+        return SGetSystemMetrics::sm_dbcsenabled;
 
     case SM_DEBUG:
-        return Settings::GetSystemMetrics::sm_debug;
+        return SGetSystemMetrics::sm_debug;
 
     case SM_DIGITIZER:
-        return Settings::GetSystemMetrics::sm_digitizer;
+        return SGetSystemMetrics::sm_digitizer;
 
     case SM_IMMENABLED:
-        return Settings::GetSystemMetrics::sm_immenabled;
+        return SGetSystemMetrics::sm_immenabled;
 
     case SM_MAXIMUMTOUCHES:
-        return Settings::GetSystemMetrics::sm_maximumtouches;
+        return SGetSystemMetrics::sm_maximumtouches;
 
     case SM_MEDIACENTER:
-        return Settings::GetSystemMetrics::sm_mediacenter;
+        return SGetSystemMetrics::sm_mediacenter;
 
     case SM_MENUDROPALIGNMENT:
-        return Settings::GetSystemMetrics::sm_menudropalignment;
+        return SGetSystemMetrics::sm_menudropalignment;
 
     case SM_MIDEASTENABLED:
-        return Settings::GetSystemMetrics::sm_mideastenabled;
+        return SGetSystemMetrics::sm_mideastenabled;
 
     case SM_MOUSEPRESENT:
-        return Settings::GetSystemMetrics::sm_mousepresent;
+        return SGetSystemMetrics::sm_mousepresent;
 
     case SM_MOUSEHORIZONTALWHEELPRESENT:
-        return Settings::GetSystemMetrics::sm_mousehorizontalwheelpresent;
+        return SGetSystemMetrics::sm_mousehorizontalwheelpresent;
 
     case SM_MOUSEWHEELPRESENT:
-        return Settings::GetSystemMetrics::sm_mousewheelpresent;
+        return SGetSystemMetrics::sm_mousewheelpresent;
 
     case SM_NETWORK:
-        return Settings::GetSystemMetrics::sm_network;
+        return SGetSystemMetrics::sm_network;
 
     case SM_PENWINDOWS:
-        return Settings::GetSystemMetrics::sm_penwindows;
+        return SGetSystemMetrics::sm_penwindows;
 
     case SM_REMOTECONTROL:
-        return Settings::GetSystemMetrics::sm_remotecontrol;
+        return SGetSystemMetrics::sm_remotecontrol;
 
     case SM_REMOTESESSION:
-        return Settings::GetSystemMetrics::sm_remotesession;
+        return SGetSystemMetrics::sm_remotesession;
 
     case SM_SAMEDISPLAYFORMAT:
-        return Settings::GetSystemMetrics::sm_samedisplayformat;
+        return SGetSystemMetrics::sm_samedisplayformat;
 
     case SM_SECURE:
-        return Settings::GetSystemMetrics::sm_secure;
+        return SGetSystemMetrics::sm_secure;
 
     case SM_SERVERR2:
-        return Settings::GetSystemMetrics::sm_serverr2;
+        return SGetSystemMetrics::sm_serverr2;
 
     case SM_SHOWSOUNDS:
-        return Settings::GetSystemMetrics::sm_showsounds;
+        return SGetSystemMetrics::sm_showsounds;
 
     case SM_SHUTTINGDOWN:
-        return Settings::GetSystemMetrics::sm_shuttingdown;
+        return SGetSystemMetrics::sm_shuttingdown;
 
     case SM_SLOWMACHINE:
-        return Settings::GetSystemMetrics::sm_slowmachine;
+        return SGetSystemMetrics::sm_slowmachine;
 
     case SM_STARTER:
-        return Settings::GetSystemMetrics::sm_starter;
+        return SGetSystemMetrics::sm_starter;
 
     case SM_SWAPBUTTON:
-        return Settings::GetSystemMetrics::sm_swapbutton;
+        return SGetSystemMetrics::sm_swapbutton;
 
     case SM_SYSTEMDOCKED:
-        return Settings::GetSystemMetrics::sm_systemdocked;
+        return SGetSystemMetrics::sm_systemdocked;
 
     case SM_TABLETPC:
-        return Settings::GetSystemMetrics::sm_tabletpc;
+        return SGetSystemMetrics::sm_tabletpc;
 
     case SM_XVIRTUALSCREEN:
-        return Settings::GetSystemMetrics::sm_xvirtualscreen;
+        return SGetSystemMetrics::sm_xvirtualscreen;
 
     case SM_YVIRTUALSCREEN:
-        return Settings::GetSystemMetrics::sm_yvirtualscreen;
+        return SGetSystemMetrics::sm_yvirtualscreen;
     }
 
-    return Settings::GetSystemMetrics::UNDEFINED;
+    return SGetSystemMetrics::UNDEFINED;
 }

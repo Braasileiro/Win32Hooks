@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Settings
+namespace Configs
 {
     bool Load();
 };

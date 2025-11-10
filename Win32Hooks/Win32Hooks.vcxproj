@@ -95,8 +95,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -116,8 +117,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,8 +142,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -161,8 +164,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -177,22 +181,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\hooks\get_device_caps_hook.h" />
-    <ClInclude Include="include\hooks\hooks.h" />
+    <ClInclude Include="include\loader.h" />
     <ClInclude Include="include\hooks\get_system_metrics_hook.h" />
     <ClInclude Include="include\hooks\register_raw_input_devices_hook.h" />
     <ClInclude Include="include\settings\get_system_metrics_settings.h" />
     <ClInclude Include="include\settings\register_raw_input_devices_settings.h" />
     <ClInclude Include="include\settings\set_window_pos_settings.h" />
-    <ClInclude Include="include\utils\logger.h" />
     <ClInclude Include="include\pch.h" />
-    <ClInclude Include="include\settings\settings.h" />
+    <ClInclude Include="include\configs.h" />
     <ClInclude Include="include\settings\get_device_caps_settings.h" />
+    <ClInclude Include="include\utils\logger.hpp" />
     <ClInclude Include="include\version_info.h" />
     <ClInclude Include="res\resource.h" />
     <ClInclude Include="include\hooks\set_window_pos_hook.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\hooks\hooks.cpp" />
+    <ClCompile Include="src\loader.cpp" />
     <ClCompile Include="src\hooks\get_device_caps_hook.cpp" />
     <ClCompile Include="src\hooks\get_system_metrics_hook.cpp" />
     <ClCompile Include="src\hooks\register_raw_input_devices_hook.cpp" />
@@ -200,7 +204,6 @@
     <ClCompile Include="src\settings\get_system_metrics_settings.cpp" />
     <ClCompile Include="src\settings\register_raw_input_devices_settings.cpp" />
     <ClCompile Include="src\settings\set_window_pos_settings.cpp" />
-    <ClCompile Include="src\utils\logger.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -208,12 +211,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\settings\settings.cpp" />
+    <ClCompile Include="src\configs.cpp" />
     <ClCompile Include="src\settings\get_device_caps_settings.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="vcpkg-configuration.json" />
-    <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\resource.rc" />

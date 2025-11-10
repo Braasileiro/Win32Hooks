@@ -1,51 +1,49 @@
 #include "pch.h"
 #include "settings/get_device_caps_settings.h"
 
-using namespace Settings;
+bool SGetDeviceCaps::EnableHook;
+int SGetDeviceCaps::driverversion;
+int SGetDeviceCaps::technology;
+int SGetDeviceCaps::horzsize;
+int SGetDeviceCaps::vertsize;
+int SGetDeviceCaps::horzres;
+int SGetDeviceCaps::vertres;
+int SGetDeviceCaps::bitspixel;
+int SGetDeviceCaps::planes;
+int SGetDeviceCaps::numbrushes;
+int SGetDeviceCaps::numpens;
+int SGetDeviceCaps::nummarkers;
+int SGetDeviceCaps::numfonts;
+int SGetDeviceCaps::numcolors;
+int SGetDeviceCaps::pdevicesize;
+int SGetDeviceCaps::curvecaps;
+int SGetDeviceCaps::linecaps;
+int SGetDeviceCaps::polygonalcaps;
+int SGetDeviceCaps::textcaps;
+int SGetDeviceCaps::clipcaps;
+int SGetDeviceCaps::rastercaps;
+int SGetDeviceCaps::aspectx;
+int SGetDeviceCaps::aspecty;
+int SGetDeviceCaps::aspectxy;
+int SGetDeviceCaps::logpixelsx;
+int SGetDeviceCaps::logpixelsy;
+int SGetDeviceCaps::sizepalette;
+int SGetDeviceCaps::numreserved;
+int SGetDeviceCaps::colorres;
+int SGetDeviceCaps::physicalwidth;
+int SGetDeviceCaps::physicalheight;
+int SGetDeviceCaps::physicaloffsetx;
+int SGetDeviceCaps::physicaloffsety;
+int SGetDeviceCaps::scalingfactorx;
+int SGetDeviceCaps::scalingfactory;
+int SGetDeviceCaps::vrefresh;
+int SGetDeviceCaps::desktopvertres;
+int SGetDeviceCaps::desktophorzres;
+int SGetDeviceCaps::bltalignment;
+int SGetDeviceCaps::shadeblendcaps;
+int SGetDeviceCaps::colormgmtcaps;
 
-bool GetDeviceCaps::EnableHook;
-int GetDeviceCaps::driverversion;
-int GetDeviceCaps::technology;
-int GetDeviceCaps::horzsize;
-int GetDeviceCaps::vertsize;
-int GetDeviceCaps::horzres;
-int GetDeviceCaps::vertres;
-int GetDeviceCaps::bitspixel;
-int GetDeviceCaps::planes;
-int GetDeviceCaps::numbrushes;
-int GetDeviceCaps::numpens;
-int GetDeviceCaps::nummarkers;
-int GetDeviceCaps::numfonts;
-int GetDeviceCaps::numcolors;
-int GetDeviceCaps::pdevicesize;
-int GetDeviceCaps::curvecaps;
-int GetDeviceCaps::linecaps;
-int GetDeviceCaps::polygonalcaps;
-int GetDeviceCaps::textcaps;
-int GetDeviceCaps::clipcaps;
-int GetDeviceCaps::rastercaps;
-int GetDeviceCaps::aspectx;
-int GetDeviceCaps::aspecty;
-int GetDeviceCaps::aspectxy;
-int GetDeviceCaps::logpixelsx;
-int GetDeviceCaps::logpixelsy;
-int GetDeviceCaps::sizepalette;
-int GetDeviceCaps::numreserved;
-int GetDeviceCaps::colorres;
-int GetDeviceCaps::physicalwidth;
-int GetDeviceCaps::physicalheight;
-int GetDeviceCaps::physicaloffsetx;
-int GetDeviceCaps::physicaloffsety;
-int GetDeviceCaps::scalingfactorx;
-int GetDeviceCaps::scalingfactory;
-int GetDeviceCaps::vrefresh;
-int GetDeviceCaps::desktopvertres;
-int GetDeviceCaps::desktophorzres;
-int GetDeviceCaps::bltalignment;
-int GetDeviceCaps::shadeblendcaps;
-int GetDeviceCaps::colormgmtcaps;
-
-void GetDeviceCaps::Load(toml::table& table)
+void SGetDeviceCaps::Load(toml::table& table)
 {
     auto section = table["GetDeviceCaps"];
 
@@ -101,12 +99,12 @@ void GetDeviceCaps::Load(toml::table& table)
     }
 }
 
-bool GetDeviceCaps::IsUndefined(int& value)
+bool SGetDeviceCaps::IsUndefined(int& value)
 {
     return value == UNDEFINED;
 }
 
-void GetDeviceCaps::Describe()
+void SGetDeviceCaps::Describe()
 {
     // YandereDev style
 

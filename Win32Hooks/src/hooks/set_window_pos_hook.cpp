@@ -7,17 +7,17 @@ static BOOL(WINAPI* _SetWindowPos)(HWND hWnd, HWND hWndInsertAfter, int X, int Y
 
 BOOL WINAPI HK_SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags)
 {
-    if (!Settings::SetWindowPos::DisableAlwaysOnTop)
+    if (SSetWindowPos::DisableAlwaysOnTop)
     {
-        return _SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
+        hWndInsertAfter = HWND_NOTOPMOST;
     }
 
-    return _SetWindowPos(hWnd, HWND_NOTOPMOST, X, Y, cx, cy, uFlags);
+    return _SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 }
 
 void SetWindowPosHook::Attach()
 {
-    if (Settings::SetWindowPos::EnableHook)
+    if (SSetWindowPos::EnableHook)
     {
         DetourAttach(&(PVOID&)_SetWindowPos, HK_SetWindowPos);
 
@@ -27,7 +27,7 @@ void SetWindowPosHook::Attach()
 
 void SetWindowPosHook::Detach()
 {
-    if (Settings::SetWindowPos::EnableHook)
+    if (SSetWindowPos::EnableHook)
     {
         DetourDetach(&(PVOID&)_SetWindowPos, HK_SetWindowPos);
 

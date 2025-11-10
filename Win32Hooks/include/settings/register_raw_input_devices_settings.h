@@ -1,16 +1,13 @@
 #pragma once
 
-namespace Settings
+class SRegisterRawInputDevices
 {
-    class RegisterRawInputDevices
-    {
-    public:
-        static bool EnableHook;
-        static bool RemoveNoHotkeysFlag;
+public:
+    static bool EnableHook;
+    static bool RemoveNoHotkeysFlag;
 
-        static void Load(toml::table& table);
+    static void Load(toml::table& table);
 
-    private:
-        static void Describe();
-    };
-}
+private:
+    static void Describe();
+};
